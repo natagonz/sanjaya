@@ -1,0 +1,31 @@
+{% extends "layout/booktemplate.html" %}
+
+
+
+
+{% block content %}
+
+<section class="blog">
+
+    <!-- Page Content -->
+    <div class="container">    
+      <div class="row">
+     {% for voucher in vouchers %}
+        <div class="col-lg-4 col-sm-4 portfolio-item">
+          <div class="card h-100 hover-shadow">
+
+            <a href="/blog/"><img class="card-img-top" src="{{voucher.img}}" alt=""></a>
+            <div class="card-body">                         
+              <h5 class="card-text"><a href="/voucher/{{voucher.id}}">{{voucher.title }}</a></h5>
+              <h3 class="card-text text-right"><a href="/voucher/{{voucher.id}}">${{voucher.price}}</a></h3>
+            </div>           
+
+          </div>
+        </div>     
+      {% endfor %}  
+     
+      </div><!-- /.row -->     
+    </div> <!-- /.page content -->
+         
+</section>
+{% endblock %}

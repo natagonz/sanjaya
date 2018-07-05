@@ -1,0 +1,217 @@
+{% extends "layout/dashboardtemplate.html" %}
+
+{% block content %}
+<link href="{{url_for ('static',filename='dashboard/css/route.css')}}" rel="stylesheet"/>
+<link href="{{url_for ('static',filename='dashboard/css/id.css')}}" rel="stylesheet"/>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Edit Stok</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      {% from "includes/_formhelpers.html" import render_field %}
+            <form method="POST" enctype="multipart/form-data" id="form">
+               {{ form.hidden_tag() }}
+                <div class="row">                    
+                  <div class="col-md-6">
+                    	<div class="form-group">
+                    {{ render_field(form.merk, class="form-control",autocomplete="off")}}
+                        </div>
+                    </div>  
+                    <div class="col-md-6">
+                    	<div class="form-group">
+                    {{ render_field(form.jenis, class="form-control",autocomplete="off")}}
+                        </div>
+                    </div>  
+                </div>
+                <div class="row">                         
+                    <div class="col-md-6">
+                        <div class="form-group">
+                    {{ render_field(form.tipe, class="form-control",autocomplete="off")}}
+                        </div>
+                    </div>   
+                    <div class="col-md-6">
+                        <div class="form-group">
+                    {{ render_field(form.tahun, class="form-control",autocomplete="off")}}
+                        </div>
+                    </div>                               
+                </div>         
+                <div class="row">                         
+                    <div class="col-md-6">
+                        <div class="form-group">
+                    {{ render_field(form.warna, class="form-control",autocomplete="off")}}
+                        </div>
+                    </div>   
+                    <div class="col-md-6">
+                        <div class="form-group">
+                    {{ render_field(form.nopol, class="form-control",autocomplete="off")}}
+                        </div>
+                    </div>                               
+                </div>           
+                <div class="row">                         
+                    <div class="col-md-6">
+                        <div class="form-group">
+                    {{ render_field(form.samsat, class="form-control dtpick",autocomplete="off")}}
+                        </div>
+                    </div>   
+                    <div class="col-md-6">
+                        <div class="form-group">
+                    {{ render_field(form.asli, class="form-control",autocomplete="off")}}
+                        </div>
+                    </div>                               
+                </div>         
+                <div class="row">                         
+                    <div class="col-md-12">
+                        <div class="form-group">
+                    {{ render_field(form.beli, class="form-control",autocomplete="off")}}
+                        </div>
+                    </div> 
+                </div>     
+                <div class="row"> 
+                    <div class="col-md-12">
+                        <div class="form-group">
+                    {{ render_field(form.biaya, class="form-control",autocomplete="off")}}
+                        </div>
+                    </div>                               
+                </div>    
+                <div class="row"> 
+                    <div class="col-md-12">
+                        <div class="form-group">
+                    {{ render_field(form.harga, class="form-control",autocomplete="off")}}
+                        </div>
+                    </div>                               
+                </div>                    
+                                                                     
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button type="submit" class="btn btn-primary">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<div class="container">
+<div class="row">
+      <div class="col-xs-12 col-sm-9">
+        
+        <!-- User profile --> 
+        <div class="panel panel-default">          
+          <div class="panel-body">            
+            <div class="profile__header">
+              <h4>{{inventory.merk}}</h4>      
+              <br>                    
+            </div>
+          </div>
+        </div>
+
+        <!-- User info -->
+        <div class="panel panel-default">
+          <div class="panel-heading">
+          <h4 class="panel-title">Info Kendaraan</h4>
+          </div>
+          <div class="panel-body">
+            <table class="table profile__table">
+              <tbody>
+                <tr>
+                  <th><strong>Merk</strong></th>
+                  <td>{{inventory.merk}}</td>
+                </tr>
+                <tr>
+                  <th><strong>Jenis</strong></th>
+                  <td>{{inventory.jenis }}</td>
+                </tr>
+                <tr>
+                  <th><strong>Tahun</strong></th>
+                  <td>{{inventory.tahun}}</td>
+                </tr>
+                <tr>
+                  <th><strong>Tipe</strong></th>
+                  <td>{{inventory.tipe}}</td>
+                </tr>
+                <tr>
+                  <th><strong>Warna</strong></th>
+                 <td>{{inventory.warna}}</td>
+                </tr>
+                <tr>
+                  <th><strong>Nopol</strong></th>
+                  <td>{{inventory.nopol}}</td>
+                </tr>
+                <tr>
+                  <th><strong>Samsat</strong></th>
+                  <<td>{{inventory.samsat}}</td>
+                </tr>
+                <tr>
+                  <th><strong>Asli Mutasi</strong></th>
+                  <td>{{inventory.asli}}</td>
+                </tr>
+               
+                
+              </tbody>
+            </table>
+          </div>
+        </div>
+               
+      </div>
+      <div class="col-xs-12 col-sm-3">
+        
+        <!-- Contact user -->
+        <p>
+          <a href="#" class="profile__contact-btn btn btn-lg btn-block btn-info" data-toggle="modal" data-target="#exampleModalLong" >
+            Edit
+          </a>
+          <a href="#" class="profile__contact-btn btn btn-lg btn-block btn-success" data-toggle="modal" data-target="#profile__contact-form">
+            Invoice
+          </a>
+        </p>
+
+        <hr class="profile__contact-hr">
+        
+        <!-- Contact info -->
+        <div class="profile__contact-info">
+          <div class="profile__contact-info-item">
+            <div class="profile__contact-info-icon">
+              <i class="fa fa-phone"></i>
+            </div>
+            <div class="profile__contact-info-body">
+              <h5 class="profile__contact-info-heading">Harga</h5>
+              {{inventory.harga}}
+            </div>
+          </div>
+          <div class="profile__contact-info-item">
+            <div class="profile__contact-info-icon">
+              <i class="fa fa-phone"></i>
+            </div>
+            <div class="profile__contact-info-body">
+              <h5 class="profile__contact-info-heading">Harga Beli</h5>
+              {{inventory.beli}}
+            </div>
+          </div>          
+          <div class="profile__contact-info-item">
+            <div class="profile__contact-info-icon">
+              <i class="fa fa-map-marker"></i>
+            </div>
+            <div class="profile__contact-info-body">
+              <h5 class="profile__contact-info-heading">Biaya</h5>
+              {{inventory.biaya}}
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+</div>
+
+{% endblock %}

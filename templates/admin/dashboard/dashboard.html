@@ -1,0 +1,86 @@
+{% extends "layout/dashboardtemplate.html" %}
+
+{% block content %}
+    
+<div class="container">
+  <div class="row">
+  	<div class="col-md-12">	
+  		<h3 class="text-center">Hi {{ current_user.username }} Welcome To Your Dashboard</h3>		
+  	</div>	
+
+	<div class="col-md-12">		
+	<br>
+	<br>
+	
+	<div class="row">
+
+	  <div class="col-md-6 col-lg-4">
+	    <div class="card">      
+	      <div class="card-body text-center pt-1 pb-20">
+	        <a href="#">
+	        	<img class="avatar avatar-xxl" src="https://png.icons8.com/dusk/50/000000/car.png">
+	          
+	        </a>
+	        <h5 class="mt-2 mb-0"><a class="hover-primary" href="/dashboard/admin/inventory">Inventory</a></h5>
+	        <br>
+	        
+	        <a href="/dashboard/admin/inventory" class="btn btn-info">Visit</a>
+	       
+	      </div>	      
+	    </div>
+	  </div>   
+
+	   <div class="col-md-6 col-lg-4">
+	    <div class="card">      
+	      <div class="card-body text-center pt-1 pb-20">
+	        <a href="#">
+	        	<img class="avatar avatar-xxl" src="https://png.icons8.com/dusk/50/000000/invoice.png">
+	          
+	        </a>
+	        <h5 class="mt-2 mb-0"><a class="hover-primary" href="/dashboard/admin/cab">Invoice</a></h5>
+	        <br>
+	        
+	        <a href="/dashboard/admin/cab" class="btn btn-info">Visit</a>
+	       
+	      </div>	      
+	    </div>
+	  </div>   
+
+	   <div class="col-md-6 col-lg-4">
+	    <div class="card">      
+	      <div class="card-body text-center pt-1 pb-20">
+	        <a href="#">
+	        	<img class="avatar avatar-xxl" src="https://png.icons8.com/dusk/50/000000/order-history.png">
+	          
+	        </a>
+	        <h5 class="mt-2 mb-0"><a class="hover-primary" href="/dashboard/admin/voucher">History</a></h5>
+	        <br>
+	        
+	        <a href="/dashboard/admin/voucher" class="btn btn-info">Visit</a>
+	       
+	      </div>	      
+	    </div>
+	  </div>   
+
+	 
+     </div> 
+	</div>
+
+			
+	
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

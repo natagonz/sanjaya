@@ -1,0 +1,40 @@
+{% extends "layout/booktemplate.html" %}
+
+
+
+
+{% block content %}
+
+<section id="features" class="features">
+ <div class="container">
+ <div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Voucher Detail</h5>        
+        <p class="card-text">Voucher Name  : {{ voucher.title }}</p>        
+        <p class="card-text">Price : $ {{ voucher.price }}</p> 
+        <p class="card-text">Person : {{ voucher.person }}</p> 
+        <p class="card-text">Username : {{ voucher.username }}</p> 
+        <p class="card-text">Email : {{ voucher.email }}</p> 
+        <p class="card-text">Phone : {{ voucher.phone }}</p> 
+        <p class="card-text">Date : {{ voucher.date.strftime("%d-%B-%Y") }}</p>    
+         <p class="card-text">Detail : {{ voucher.detail }}</p>                    
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Payment Option</h5>
+        <p>You will be charged for $ {{voucher.price}}</p>
+        <a href="#!" class="paddle_button" data-product="533041">Pay Now!</a>         
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+</section>
+
+
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends "layout/booktemplate.html" %}
+
+
+
+
+{% block content %}
+  <!-- Page Content -->
+    <div class="container">
+
+      <div class="row">                
+        <!-- Post Content Column -->
+        <div class="col-lg-12">
+        <br>          
+           <!-- Title -->
+          <h1 class="mt-4">{{voucher.title}}</h1>          
+          <br>
+          <!-- Preview Image -->
+          <img class="img-fluid rounded" src="{{voucher.img}}" alt="">
+         
+
+          <!-- Post Content -->
+          <br>
+          <br>
+          <div class="row">
+          	<div class="col-lg-8">
+	          <div>{{voucher.detail | safe }}</div>
+	        </div>
+	        <div class="col-lg-4">
+	        	<div class="card">
+			      <div class="card-body">
+			        <h3 class="card-title">${{voucher.price}} / Person </h3>    
+			        <hr>
+			        <p><i class="fa fa-check"></i> experienced guide</p>
+			        <p><i class="fa fa-credit-card"></i> easy payment</p> 
+			        <p><i class="fa fa-phone"></i> fast response</p> 
+			        <a href="/voucher/book/{{voucher.id}}" class="btn btn-primary navbar-btn btn-shadow btn-gradient">Book Now</a>                   
+			      </div>
+    			</div>         
+	        </div>
+	      </div>  
+	          
+
+          
+
+         
+
+
+        </div>
+
+      
+      </div>
+      <!-- /.row -->
+
+    </div>
+
+{% endblock %}

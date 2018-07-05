@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+	<link href="{{url_for ('static',filename='dashboard/css/index.css')}}" rel="stylesheet"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<title></title>
+</head>
+<body> 
+<div class="container">
+        <nav class="navbar navbar-toggleable-md navbar-light" id="commRollover">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                <!--<a class="navbar-brand" href="/dashboard"><img src="img/logo.png" alt="Logo" style="height: 40px;"></a>-->
+            </button>
+
+            
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/dashboard">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard/transaction">Transaction</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard/projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard/setting">Setting</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+</div>
+<br>
+<br>
+<div class="container">
+<div class="row">
+
+<div class="col-md-12"> 
+{% include "includes/_message.html" %}
+</div>
+</div>
+</div>
+{% block content %}
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+<script>
+$(document).ready(function(){
+    $("#show").click(function(){
+        $("form").toggle();
+    });
+});
+</script>
+
+<script>
+$(document).ready(function(){
+    $("#description").click(function(){
+        $(".desc").toggle();
+    });
+});
+</script>
+
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script>
+    $(function() {
+         $( ".dtpick" ).datepicker({
+             changeYear:true,
+         yearRange: "-100:+1"   
+            });
+        });
+    </script>           
+
+<!--paddle-->
+<script src="https://cdn.paddle.com/paddle/paddle.js"></script>
+<script type="text/javascript">
+    Paddle.Setup({
+        vendor: 32966
+    });
+</script>
+
+<script src="//cdn.ckeditor.com/4.7.1/basic/ckeditor.js"></script>
+    <script type="text/javascript">
+    CKEDITOR.replace("editor")
+    </script>    
+
+
+
+
+
+
+<!-- modal date not show <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

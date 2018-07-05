@@ -1,0 +1,42 @@
+{% extends "layout/booktemplate.html" %}
+
+
+
+
+{% block content %}
+
+<section id="features" class="features">
+ <div class="container">
+ <div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Transfer Detail</h5>        
+        <p class="card-text">Pickup : {{ book.pickup }}</p>
+        <p class="card-text">Drop : {{ book.drop }}</p>   
+        <p class="card-text">Car : {{ book.car }}</p> 
+        <p class="card-text">Price : $ {{ book.price }}</p> 
+        <p class="card-text">Hour : {{ book.hour }}</p> 
+        <p class="card-text">Username : {{ book.username }}</p> 
+        <p class="card-text">Email : {{ book.email }}</p> 
+        <p class="card-text">Phone : {{ book.phone }}</p> 
+        <p class="card-text">Date : {{ book.date.strftime("%d-%B-%Y") }}</p>    
+         <p class="card-text">Detail : {{ book.detail }}</p>                    
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Payment Option</h5>
+        <p>You will be charged for $ {{book.price}}</p>
+        <a href="#!" class="paddle_button" data-product="533041">Pay Now!</a>         
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+</section>
+
+
+{% endblock %}
